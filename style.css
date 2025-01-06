@@ -1,0 +1,217 @@
+/* -----------------------------------------------------
+  1. FONT IMPORT (Optional): 
+     Using Google Fonts for a modern, professional vibe
+----------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+/* -----------------------------------------------------
+  2. GLOBAL RESET & BODY STYLES
+----------------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #f0f0f0; /* Light gray background */
+  color: #333; /* Standard text color */
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* -----------------------------------------------------
+  3. CONTAINER LAYOUT
+     We'll use a two-column layout:
+     Left side (sidebar) -> ~30%
+     Right side (content) -> ~70%
+----------------------------------------------------- */
+#cv-container {
+  display: flex;
+  flex-wrap: wrap; /* helps on smaller screens */
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 100vh; /* optional, if you want full height */
+}
+
+/* -----------------------------------------------------
+  4. LEFT COLUMN (Sidebar)
+----------------------------------------------------- */
+#cv-sidebar {
+  background-color: #2a2a2a; 
+  color: #ffffff; /* white text on dark bg */
+  flex: 1 1 300px;
+  max-width: 300px; /* fixed-ish sidebar width */
+  padding: 2rem 1.5rem;
+}
+
+/* Name at the top (Big, bold) */
+#cv-sidebar header {
+  margin-bottom: 2rem;
+}
+
+#cv-sidebar header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 0.2rem;
+}
+
+#cv-sidebar header h2 {
+  font-size: 1.2rem;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5rem;
+}
+
+/* A little horizontal rule (optional) */
+#cv-sidebar header hr {
+  border: 0;
+  height: 1px;
+  background: #444;
+  margin: 1rem 0;
+}
+
+/* Sidebar Section Titles 
+   (e.g., "PERSONAL DETAILS", "SKILLS") 
+   We'll make these stand out with a black bar on the left. 
+*/
+#cv-sidebar section h3 {
+  background-color: #000000;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* Sidebar content / lists styling */
+#cv-sidebar ul {
+  list-style: none;
+  margin-bottom: 2rem;
+}
+
+#cv-sidebar li {
+  margin-bottom: 0.5rem;
+  font-weight: 300;
+}
+
+/* Contact icons or text can have a little spacing */
+#cv-sidebar li::before {
+  content: "• ";
+  color: #f2f2f2;
+  margin-right: 4px;
+}
+
+/* Links in sidebar (like GitHub link) */
+#cv-sidebar a {
+  color: #c6c6c6;
+  word-break: break-all;
+}
+#cv-sidebar a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* -----------------------------------------------------
+  5. RIGHT COLUMN (Main Content)
+----------------------------------------------------- */
+#cv-content {
+  background-color: #ffffff; 
+  flex: 1 1 700px;
+  padding: 2rem;
+}
+
+/* Each main section (SUMMARY, WORK EXPERIENCE, EDUCATION) */
+#cv-content section {
+  margin-bottom: 2rem;
+}
+
+/* Black bar headings for sections: 
+   SUMMARY, WORK EXPERIENCE, EDUCATION
+*/
+#cv-content section h3 {
+  background-color: #3b3b3b; 
+  color: #ffffff;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 1rem;
+}
+
+/* The actual text under each section */
+#cv-content section p,
+#cv-content section ul {
+  margin-bottom: 1rem;
+  font-weight: 300;
+  font-size: 0.95rem;
+}
+
+/* Work Experience "article" styling */
+#cv-content article {
+  margin-bottom: 1.5rem;
+}
+
+/* Job Title / Position */
+#cv-content article h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+
+/* Company / Location line */
+#cv-content article p {
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Bullets under each job */
+#cv-content article ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+}
+
+/* -----------------------------------------------------
+  6. EDUCATION Section
+     Similar to Work Experience, but smaller headings
+----------------------------------------------------- */
+#education article h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+
+#education article p {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.8rem;
+}
+
+/* -----------------------------------------------------
+  7. PRINT STYLES (Optional)
+     If someone prints from the browser, let's make it look nice
+----------------------------------------------------- */
+@media print {
+  body {
+    background-color: #ffffff;
+  }
+
+  #cv-container {
+    flex-wrap: nowrap;
+    max-width: 100%;
+    min-height: auto;
+  }
+
+  #cv-sidebar {
+    max-width: 30%;
+  }
+
+  #cv-content {
+    max-width: 70%;
+    padding: 1rem;
+  }
+}
