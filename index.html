@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CV - Oshodin Jennifer</title>
+  <style>
+    /* -----------------------------------------------------
+       1. FONT IMPORT (Optional)
+         Using Google Fonts for a modern, professional vibe
+    ----------------------------------------------------- */
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+    /* -----------------------------------------------------
+       2. GLOBAL RESET & BODY STYLES
+    ----------------------------------------------------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background-color: #f0f0f0; /* Light gray background */
+      color: #333; /* Standard text color */
+      line-height: 1.4;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* -----------------------------------------------------
+       3. CONTAINER LAYOUT
+         We'll use a two-column layout:
+         Left side (sidebar) -> ~30%
+         Right side (content) -> ~70%
+    ----------------------------------------------------- */
+    #cv-container {
+      display: flex;
+      flex-wrap: wrap; /* helps on smaller screens */
+      max-width: 1200px;
+      margin: 0 auto;
+      min-height: 100vh; /* optional, if you want full height */
+    }
+
+    /* -----------------------------------------------------
+       4. LEFT COLUMN (Sidebar)
+    ----------------------------------------------------- */
+    #cv-sidebar {
+      background-color: #2a2a2a;
+      color: #ffffff; /* white text on dark bg */
+      flex: 1 1 300px;
+      max-width: 300px; /* fixed-ish sidebar width */
+      padding: 2rem 1.5rem;
+    }
+
+    /* Name at the top (Big, bold) */
+    #cv-sidebar header {
+      margin-bottom: 2rem;
+    }
+
+    #cv-sidebar header h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 0.2rem;
+    }
+
+    #cv-sidebar header h2 {
+      font-size: 1.2rem;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.5rem;
+    }
+
+    /* A little horizontal rule (optional) */
+    #cv-sidebar header hr {
+      border: 0;
+      height: 1px;
+      background: #444;
+      margin: 1rem 0;
+    }
+
+    /* Sidebar Section Titles (e.g., "PERSONAL DETAILS", "SKILLS")
+       We'll make these stand out with a black bar on the left. 
+    */
+    #cv-sidebar section h3 {
+      background-color: #000000;
+      padding: 0.5rem 0.75rem;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+    }
+
+    /* Sidebar content / lists styling */
+    #cv-sidebar ul {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    #cv-sidebar li {
+      margin-bottom: 0.5rem;
+      font-weight: 300;
+    }
+
+    /* Contact icons or text can have a little bullet */
+    #cv-sidebar li::before {
+      content: "• ";
+      color: #f2f2f2;
+      margin-right: 4px;
+    }
+
+    /* Links in sidebar (like GitHub link) */
+    #cv-sidebar a {
+      color: #c6c6c6;
+      word-break: break-all;
+    }
+    #cv-sidebar a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    /* -----------------------------------------------------
+       5. RIGHT COLUMN (Main Content)
+    ----------------------------------------------------- */
+    #cv-content {
+      background-color: #ffffff;
+      flex: 1 1 700px;
+      padding: 2rem;
+    }
+
+    /* Each main section (SUMMARY, WORK EXPERIENCE, EDUCATION) */
+    #cv-content section {
+      margin-bottom: 2rem;
+    }
+
+    /* Black bar headings for sections: 
+       SUMMARY, WORK EXPERIENCE, EDUCATION
+    */
+    #cv-content section h3 {
+      background-color: #3b3b3b;
+      color: #ffffff;
+      padding: 0.5rem 0.75rem;
+      font-size: 1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 1rem;
+    }
+
+    /* The actual text under each section */
+    #cv-content section p,
+    #cv-content section ul {
+      margin-bottom: 1rem;
+      font-weight: 300;
+      font-size: 0.95rem;
+    }
+
+    /* Work Experience "article" styling */
+    #cv-content article {
+      margin-bottom: 1.5rem;
+    }
+
+    /* Job Title / Position */
+    #cv-content article h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+      text-transform: uppercase;
+    }
+
+    /* Company / Location line */
+    #cv-content article p {
+      font-weight: 400;
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    /* Bullets under each job */
+    #cv-content article ul {
+      list-style: disc;
+      padding-left: 1.5rem;
+    }
+
+    /* EDUCATION Section, similar style */
+    #education article h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+      text-transform: uppercase;
+    }
+    #education article p {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 0.8rem;
+    }
+
+    /* -----------------------------------------------------
+       6. PRINT STYLES (Optional)
+         If someone prints from the browser,
+         let's make it look nice
+    ----------------------------------------------------- */
+    @media print {
+      body {
+        background-color: #ffffff;
+      }
+
+      #cv-container {
+        flex-wrap: nowrap;
+        max-width: 100%;
+        min-height: auto;
+      }
+
+      #cv-sidebar {
+        max-width: 30%;
+      }
+
+      #cv-content {
+        max-width: 70%;
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="cv-container">
+
+    <!-- LEFT SIDEBAR -->
+    <div id="cv-sidebar">
+      <header>
+        <h1>OSHODIN</h1>
+        <h2>JENNIFER</h2>
+        <hr />
+      </header>
+
+      <!-- PERSONAL DETAILS -->
+      <section id="personal-details">
+        <h3>Personal Details</h3>
+        <ul>
+          <li>jennifer.oshodin@gmail.com</li>
+          <li>417-612-6524</li>
+          <li>505 East St. Louis Street, Springfield, MO 65806</li>
+          <li><a href="https://jenniferoshodin.github.io" target="_blank">https://jenniferoshodin.github.io</a></li>
+        </ul>
+      </section>
+
+      <!-- SKILLS -->
+      <section id="skills">
+        <h3>Skills</h3>
+        <ul>
+          <li>MS Office (Excel, Word, Outlook)</li>
+          <li>Talent Acquisition</li>
+          <li>Conflict Resolution</li>
+          <li>Onboarding &amp; Orientation</li>
+          <li>Training &amp; Development</li>
+          <li>Organizational Development</li>
+          <li>Budgeting/Resource Allocation</li>
+          <li>Leadership</li>
+          <li>Time Management</li>
+        </ul>
+      </section>
+    </div> <!-- /#cv-sidebar -->
+
+    <!-- MAIN CONTENT -->
+    <div id="cv-content">
+      <!-- SUMMARY -->
+      <section id="summary">
+        <h3>Summary</h3>
+        <p>
+          6 years’ experience as a professional. Proficient in MS Office, Excel, Outlook, 
+          Email, and Internet. Excellent communication and interpersonal skills, a 
+          quick learner and detail oriented. Resourceful, strong organizational 
+          skills, works well independently and as a team. Creative thinker, solution 
+          oriented, strong time management, and works well under pressure.
+        </p>
+      </section>
+
+      <!-- WORK EXPERIENCE -->
+      <section id="work-experience">
+        <h3>Work Experience</h3>
+
+        <!-- OPERATIONS MANAGER -->
+        <article>
+          <h4>Operations Manager</h4>
+          <p><em>Novaji Introserve, Lagos, Nigeria</em> | Sept 2016 – Nov 2022</p>
+          <ul>
+            <li>Designed and facilitated on-boarding orientation and training for new staff, and monitored key performance indexes through quarterly appraisals and feedback.</li>
+            <li>Managed client database and records (existing and prospective), facilitating customer and client retention.</li>
+            <li>Handled on-boarding of customers to software implementation, including verification.</li>
+            <li>Addressed customer inquiries, complaints, and account opening requests.</li>
+            <li>Resolved customer issues and issued approval decisions on complaints and feedback.</li>
+            <li>Handled cash, cheque, debit, and credit transactions.</li>
+          </ul>
+        </article>
+
+        <!-- ACCOUNT ASSISTANT -->
+        <article>
+          <h4>Account Assistant</h4>
+          <p><em>International Uniforms Nig Ltd</em> | Jul 2015 – Aug 2016</p>
+          <ul>
+            <li>Participated in monthly staff salary payment into individual accounts.</li>
+            <li>Managed all company expenses, cash call, retirement, and archived receipts for audit records.</li>
+            <li>Archived, QC’d, and organized all income invoices in the company’s financial archive for tracking and payment.</li>
+            <li>Reimbursed staff members for all petty cash.</li>
+            <li>Reported on debtors and creditors.</li>
+            <li>Handled daily bank receipt posting.</li>
+          </ul>
+        </article>
+
+        <!-- CUSTOMER SERVICE / ADMIN -->
+        <article>
+          <h4>Customer Service and Administrative Representative</h4>
+          <p><em>Cider Global Business Solutions Ltd</em> | Feb 2013 – May 2014</p>
+          <ul>
+            <li>Provided ongoing support to senior executives.</li>
+            <li>Managed executive calendars, coordinated meetings, appointments, events, and travel arrangements.</li>
+            <li>Composed and proofread memos, letters, reports, and presentations, ensuring accurate and error-free communication.</li>
+            <li>Facilitated quick resolution of customer complaints.</li>
+            <li>Maintained Excel spreadsheets and databases for customer details.</li>
+            <li>Responded to internal and external inquiries via email and telephone.</li>
+          </ul>
+        </article>
+      </section>
+
+      <!-- EDUCATION -->
+      <section id="education">
+        <h3>Education</h3>
+        <article>
+          <h4>Masters in Business Administration and Management (MBA)</h4>
+          <p>Missouri State University, Springfield</p>
+          <p><em>In view</em></p>
+        </article>
+        <article>
+          <h4>Business Education (Accounting) B. Sc. (Ed.) - 2012</h4>
+          <p>Ambrose Alli University</p>
+        </article>
+      </section>
+
+    </div> <!-- /#cv-content -->
+
+  </div> <!-- /#cv-container -->
+
+</body>
+</html>
